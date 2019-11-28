@@ -1,0 +1,59 @@
+easy_admin:
+  design:
+      menu:
+        - label: 'My Sentynel'
+          children:
+             - { entity: 'Collaborateur' }
+             - { entity: 'Societe' }
+         
+
+  entities:
+      Collaborateur:
+         class: App\Entity\Collaborateur
+         list:
+          actions:
+            - { name: 'edit', icon: 'pencil', label: 'Modifier' }
+            - { name: 'delete', icon: 'trash', label: 'Supprimer' }
+         form:
+            fields: 
+              - {type: 'tab', label: 'Informations Personnelle', icon: 'user'}
+              - {property: 'nom'}
+              - {property: 'prenom'}
+              - {property: 'telephoneMobile', type: 'tel'}
+              - {property: 'email'}
+              - {property: 'idSituations', label: 'Situation Familliale'}
+
+              - {type: 'tab', label: 'Informations Professionnelle', icon: 'phone'}
+              - {property: 'idSocietes', label: 'Société'}
+              - {property: 'matricule', type: 'number'}
+              - {property: 'NumCarteVital',type: 'number'}
+              - {property: 'NumCartePro',type: 'number'}
+              - {property: 'idDiplomes', label: 'Diplome'}
+              - {property: 'idContrats', label: 'Type Contrat'}
+
+              - {type: 'tab', label: 'Informations Contrat', icon: 'newspaper-o'}
+              - {property: 'dateContratDebut', label: 'Date Début Contrat'}
+              - {property: 'dateContratFin', label: 'Date Fin Contrat'}
+              - {property: 'siteAffectation', label: 'Site affecter'}
+              - {property: 'salaireMensuelBrut', label: 'Salaire brut'}
+              - {property: 'idPostes', label: 'Poste de travail'}
+             
+              
+
+              
+      Societe:
+          class: App\Entity\Societe
+          list:
+            actions:
+              - { name: 'edit', icon: 'pencil', label: 'Modifier' }
+              - { name: 'delete', icon: 'trash', label: 'Supprimer' }
+          form:
+            fields: 
+              - {type: 'section', label: 'Informations Société', icon: 'user'}
+              - {property: 'nom'}
+              - {property: 'adresse'}
+              - {property: 'description'}
+              - {property: 'siteweb'}
+              
+    
+              
